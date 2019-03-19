@@ -25,7 +25,8 @@ if [ -z "$DEPLOY_TASKS" ]; then
 fi
 
 tasks=(`echo ${DEPLOY_TASKS}`)
+echo $tasks
 cd $build_dir
 for task in ${tasks[@]}; do
-  bundle exec rake $task
+  rake $task
 done
